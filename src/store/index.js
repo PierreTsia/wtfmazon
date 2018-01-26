@@ -36,21 +36,66 @@ export const store = new Vuex.Store({
   mutations: {
     createItem(state, payload) {
         state.loadedItems.push(payload)
-    }
+    },
+    setLoadedItems(state, payload){
+        state.loadedItems = payload
+      },
+
 
   },
 
   actions: {
+    loadItems({commit}){
+        firebase.database().ref('items').once('value')
+          .then((data) =>{
+            const items = []
+            const obj = data.val()
+            for (let key in obj){
+              items.push({
+                id: key,
+                productName: obj[key].productName,
+                description : obj[key].description,
+                price : obj[key].price,
+                imgUrl : obj[key].imgUrl
+  
+              })
+            }
+            console.log(items)
+            commit('setLoadedItems', items)
+           
+          })
+          .catch((error) => {
+           
+            console.log(error)
+          }
+        )
+  
+      },
       createItem({commit}, payload){
           const newItem = {
               productName : payload.productName,
               description : payload.description,
               imgUrl : payload.imgUrl,
               price : payload.price,
-              id : Math.floor(Math.random()*10000) 
           }
-          commit('createItem', newItem)
+          
+          //commit('createItem', newItem)
+
+          firebase.database().ref('items').push(newItem)
+          .then((data) => {
+              const key = data.key
+              commit('createItem', {
+                ...newPost,
+                id : key
+              })
+            }
+          )
+          .catch((error) => {
+              console.log(error)
+            }
+        )
       }
+      
 
   },
 

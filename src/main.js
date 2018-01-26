@@ -37,5 +37,6 @@ new Vue({
       storageBucket: "",
       messagingSenderId: "162492416510"
     })
+    this.$store.dispatch('loadItems')
   }
 })
