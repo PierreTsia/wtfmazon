@@ -14,6 +14,7 @@
             </v-btn>
          
           </span>
+          <span v-if="userIsAuth">Logged In</span>
     </v-toolbar>
     <v-navigation-drawer  fixed temporary dark v-model="sideNav" class="primary secondary--text hidden-sm-and-up">
       <v-list>
@@ -41,10 +42,17 @@
 export default {
   data() {
     return {
-      sideNav: false
+      sideNav: false,
+
     };
   },
   computed: {
+    user(){
+      return this.$store.getters.getUser
+    },
+    userIsAuth(){
+        return this.$store.getters.getUser != null && this.$store.getters.getUser != undefined
+     },
     menuItems() {
       let menuItems = [
         {
@@ -56,8 +64,10 @@ export default {
           icon: "lock_open",
           title: "Sign In",
           link: "/signin"
-        },
-        {
+        } ]
+        if (this.userIsAuth){
+          menuItems = [
+             {
           icon: "store",
           title: "View Products",
           link: "/"
@@ -72,8 +82,8 @@ export default {
           title: "Admin",
           link: "/admin"
         },
-
-      ];
+          ]
+        }
 
       return menuItems;
     },
