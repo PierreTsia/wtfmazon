@@ -23,6 +23,262 @@
   
 
 </table>
+
+
+    <table>
+      <tr>
+        <th rowspan="5">Main Infos</th>
+
+        <th>documentName</th>
+
+        <td>BAIL XGDHJG 54-OCR</td>
+      </tr>
+
+      <tr>
+        <th>documentType</th>
+
+        <td>Bail commercial</td>
+      </tr>
+
+      <tr>
+        <th>folder</th>
+
+        <td>Test export excel</td>
+      </tr>
+
+      <tr>
+        <th>uploadDate</th>
+
+        <td>Tue Aug 14 2018 16:01:26 GMT+0000 (UTC)</td>
+      </tr>
+
+      <tr>
+        <th>fileFormat</th>
+
+        <td>PDF</td>
+      </tr>
+
+      <tr>
+        <th rowspan="2">calendrier</th>
+
+        <th>Date de signature</th>
+
+        <td>1953-09-30T00:00:00.000Z</td>
+      </tr>
+
+      <tr>
+        <th>Date test</th>
+
+        <td>2004-03-01T00:00:00.000Z</td>
+      </tr>
+
+      <tr>
+
+        <th rowspan="2">Bailleur</th>
+        <th rowspan="2">ICIDénomination sociale</th>
+        <td rowspan="2">AERTY 54</td>
+        <th>Représentant légal</th>
+        <td>Monsieur Marcel CFDGHJ</td>
+      </tr>
+      <tr>
+        <th>Adresse du siege social</th>
+        <td>LUNEVILLE (54300) 5, rue du Coq Z.À.E. de la Faïencerie</td>
+      </tr>
+
+
+      <tr>
+        <tr>
+          <th rowspan="2">Preneur</th>
+
+          <th rowspan="2">ICID&eacute;nomination sociale</th>
+
+          <td rowspan="2">IMMOBEST</td>
+
+          <th>Repr&eacute;sentant l&eacute;gal</th>
+
+          <td>Messieurs Jean&mdash;Claude FDHGSFGD et G&eacute;rard GHDJHG</td>
+        </tr>
+
+        <tr>
+          <th>Adresse du siege social</th>
+
+          <td>LUNEVILLE (54300) 5, rue du Coq Z.A.E. de la Fa&iuml;encerie</td>
+        </tr>
+
+        <tr>
+          <th rowspan="3">Bien</th>
+
+          <th>Adresse du bien</th>
+
+          <td>LUNEVILLE (54300) 5 rue du Coq</td>
+        </tr>
+
+        <tr>
+          <th>Surface locative</th>
+
+          <td>420m2</td>
+        </tr>
+
+        <tr>
+          <th>Destination des locaux &amp; Activit&eacute;s autoris&eacute;es</th>
+
+          <td>Le preneur exerce une activit&eacute; non commerciale, mais les parties d&eacute;cident express&eacute;ment et d&lsquo;un commun accord de soumettre la pr&eacute;sente location aux dispositions du d&eacute;cret du 30 Septembre 1953 codifi&eacute;
+            sous les articles L. 145&mdash;1 &agrave; L. 145&mdash;60 du code de commerce. En cons&eacute;quence, le preneur b&eacute;n&eacute;ficiera de l&lsquo;ensemble du statut et de la propri&eacute;t&eacute; commerciale.</td>
+        </tr>
+
+        <tr>
+          <th rowspan="7">clauses</th>
+
+          <th>Montant du loyer</th>
+
+          <td>23280.0</td>
+        </tr>
+
+        <tr>
+          <th>Fr&eacute;quence de paiement</th>
+
+          <td>no value</td>
+        </tr>
+
+        <tr>
+          <th>Clause d'indexation du loyer</th>
+
+          <td>Indice de r&eacute;f&eacute;rence. L&lsquo;indice de r&eacute;f&eacute;rence est celui du 3&egrave;me trimestre 2003, s&lsquo;&eacute;levant &agrave; 1203.</td>
+        </tr>
+
+        <tr>
+          <th>Indice d'indexation</th>
+
+          <td>no value</td>
+        </tr>
+
+        <tr>
+          <th>Trimestre de r&eacute;f&eacute;rence</th>
+
+          <td>3&egrave;me trimestre</td>
+        </tr>
+
+        <tr>
+          <th>P&eacute;nalit&eacute;s de retard</th>
+
+          <td>None</td>
+        </tr>
+
+        <tr>
+          <th>D&eacute;p&ocirc;t de garantie</th>
+
+          <td>no value</td>
+        </tr>
+
+        <tr>
+          <th rowspan="5">Dates et dur&eacute;es</th>
+
+          <th>Date de prise d'effet</th>
+
+          <td>no value</td>
+        </tr>
+
+        <tr>
+          <th>Date d'expiration</th>
+
+          <td>no value</td>
+        </tr>
+
+        <tr>
+          <th>Dur&eacute;e ferme</th>
+
+          <td>no value</td>
+        </tr>
+
+        <tr>
+          <th>Date de premi&egrave;re &eacute;ch&eacute;ance de r&eacute;siliation triennale
+          </th>
+
+          <td>no value</td>
+        </tr>
+
+        <tr>
+          <th>Date de seconde &eacute;ch&eacute;ance de r&eacute;siliation triennale</th>
+
+          <td>no value</td>
+        </tr>
+
+        <tr>
+          <th rowspan="7">Loyer</th>
+
+          <th>Montant du loyer</th>
+
+          <td>23280.0</td>
+        </tr>
+
+        <tr>
+          <th>Fr&eacute;quence de paiement</th>
+
+          <td>no value</td>
+        </tr>
+
+        <tr>
+          <th>Clause d'indexation du loyer</th>
+
+          <td>Indice de r&eacute;f&eacute;rence. L&lsquo;indice de r&eacute;f&eacute;rence est celui du 3&egrave;me trimestre 2003, s&lsquo;&eacute;levant &agrave; 1203.</td>
+        </tr>
+
+        <tr>
+          <th>Indice d'indexation</th>
+
+          <td>no value</td>
+        </tr>
+
+        <tr>
+          <th>Trimestre de r&eacute;f&eacute;rence</th>
+
+          <td>3&egrave;me trimestre</td>
+        </tr>
+
+        <tr>
+          <th>P&eacute;nalit&eacute;s de retard</th>
+
+          <td>None</td>
+        </tr>
+
+        <tr>
+          <th>D&eacute;p&ocirc;t de garantie</th>
+
+          <td>no value</td>
+        </tr>
+
+        <tr>
+          <th rowspan="2">Charges et Taxes</th>
+
+          <th>Provision sur charges</th>
+
+          <td>8000.0</td>
+        </tr>
+
+        <tr>
+          <th>Taxe fonci&egrave;re</th>
+
+          <td>no value</td>
+        </tr>
+
+        <tr>
+          <th rowspan="0">Autres clauses</th>
+
+          <td></td>
+        </tr>
+
+        <tr>
+          <th rowspan="0">Autres informations</th>
+
+          <td></td>
+        </tr>
+
+        <tr>
+          <th rowspan="0">Annexes</th>
+
+          <td></td>
+        </tr>
+    </table>
 		</div>
 	</div></div>
 </div>
