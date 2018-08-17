@@ -18,9 +18,10 @@
                 </v-card-title>
                 <v-card-actions>
                     <v-flex xs12 class="text-xs-center">
-                        <v-btn class="primary">
+                        <v-btn :disabled="!userIsAuth" class="primary">
                         <v-icon>shopping-cart</v-icon>
                         Buy
+                        
                     </v-btn>
                     </v-flex>
                     
@@ -38,7 +39,13 @@ export default {
   computed: {
     items() {
       return this.$store.getters.loadedItems;
-    }
+    },
+     user(){
+      return this.$store.getters.getUser
+    },
+    userIsAuth(){
+        return this.$store.getters.getUser != null && this.$store.getters.getUser != undefined
+     },
   }
 };
 </script>

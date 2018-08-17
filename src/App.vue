@@ -14,7 +14,12 @@
             </v-btn>
          
           </span>
-          <span v-if="userIsAuth">Logged In</span>
+          <span v-if="userIsAuth">Logged In
+            <v-btn @click="logOut" flat class="primary">
+              Log Out
+              <v-icon>exit_to_app</v-icon>
+            </v-btn>
+          </span>
     </v-toolbar>
     <v-navigation-drawer  fixed temporary dark v-model="sideNav" class="primary secondary--text hidden-sm-and-up">
       <v-list>
@@ -39,12 +44,24 @@
 
 
 <script>
+
 export default {
   data() {
     return {
       sideNav: false,
 
-    };
+    }
+  },
+  methods:{
+    logOut(){
+      firebase.auth().signOut().
+      then(function() {
+        this.router.push('/signin')
+      })
+      .catch(function(error) {
+        console.log(error)
+    });
+    }
   },
   computed: {
     user(){
@@ -67,7 +84,8 @@ export default {
         } ]
         if (this.userIsAuth){
           menuItems = [
-             {
+    
+        {
           icon: "store",
           title: "View Products",
           link: "/"
