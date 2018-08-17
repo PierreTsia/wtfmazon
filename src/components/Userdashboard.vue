@@ -12,6 +12,7 @@
 	<div class="row"><div class="col-xs-12">
 		<button  class="btn btn-success" @click="_exportTable">Export</button>
         	<button  class="btn btn-success" @click="buildRow(input)">Build Row</button>
+          <button  class="btn btn-success" @click="exportTable('testtable')">EXPORT</button>
 	</div></div>
 	<div class="row"><div class="col-xs-12">
 		<div class="table-responsive">
@@ -25,7 +26,7 @@
 </table>
 
 
-    <table>
+    <table id="testtable" >
       <tr>
         <th rowspan="5">Main Infos</th>
 
@@ -424,6 +425,18 @@ export default {
     },
   },
   methods: {
+    exportTable(tableId){
+           /* convert state to workbook */
+      var tbl = document.getElementById(tableId);
+      var wb = XLSX.utils.table_to_book(tbl);
+      // const wsdata = XLSX.utils.aoa_to_sheet(wsjson);
+      //console.log("wsdata: ", wsdata);
+      //const wb = XLSX.utils.book_new();
+      // XLSX.utils.book_append_sheet(wb, "SheetJS");
+      /* generate file and send to client */
+      XLSX.writeFile(wb, "sheetjs.xlsx");
+
+    },
     printTable(tableHTML) {
       const table = document.getElementById("sheetjs");
       table.innerHTML = tableHTML;
@@ -432,10 +445,11 @@ export default {
       let tableHTML = "";
       for (let key in obj) {
         let sectionName = key;
-        console.log("sectionName: ", sectionName);
+        //console.log("sectionName: ", sectionName);
         let sections = obj[key];
         console.log("sections: =====>", sections);
         let sectionHTML = "";
+        let rowSpan = 0;
 
         let rowStart = `<tr><th rowspan="${
           sections.length
@@ -444,7 +458,7 @@ export default {
           rowStart += `<td></td></tr>`;
         } else {
           //FIRT LOOP ON SECTIONS
-          rowStart += this.recursiveMeth(sections);
+          rowStart = this.recursiveMeth(sections, rowStart, rowSpan);
         }
 
         tableHTML += rowStart;
@@ -453,34 +467,42 @@ export default {
       this.printTable(tableHTML);
     },
 
-    recursiveMeth(sections) {
-      let html = "";
+    recursiveMeth(sections, rowStart, rowSpan) {
+      let html ='';
+      html  += rowStart;
+      console.log('html start ===>: ', html);
       sections.forEach((section, index) => {
         let subSectionName = Object.keys(section)[0];
         let subSectionContent = section[subSectionName];
+        console.log('subSectionContent: ', subSectionContent);
 
         if (typeof subSectionContent === "string") {
           //INDEX 0
           if (index === 0) {
+            rowSpan ++
             html += `<th>${subSectionName}</th><td>${subSectionContent}</td></tr>`;
             //FIN DE LA 1ERE ROW
           } else {
+            rowSpan ++
             html += `<tr><th>${subSectionName}</th><td>${subSectionContent}</td></tr>`;
             //FIN DE LA 1ERE ROW
           }
+          console.log('html fin du 1er if ', html);
+          return html
+          
         } else {
           let nextkey = Object.keys(subSectionContent[0])[0];
           console.log("nextkey: ", nextkey);
           let nextvalue = subSectionContent[0][nextkey];
           console.log("nextvalue: ", nextvalue);
-          html += `<th>ICI${subSectionName}</th><td>${
+          html += `<th rowspan="${nextvalue.length}">ICI${subSectionName}</th><td rowspan="${nextvalue.length}">${
             Object.keys(subSectionContent[0])[0]
           }</td>`;
 
-          this.recursiveMeth(nextvalue);
+          html = this.recursiveMeth(nextvalue, html,);
         }
       });
-      console.log("html:============> ", html);
+      console.log("rowSpan:============> ", rowSpan);
       return html;
     },
     _suppress(evt) {
